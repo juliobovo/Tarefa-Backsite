@@ -1,5 +1,5 @@
 <?php
-
+ 
   include("conexao.php");
 ?>
 
@@ -25,6 +25,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+    
   <body>
     <div id="topo" class="container-fluid">
       <div class="row">
@@ -39,7 +40,7 @@
         <div id="menu" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 centro">
           <h4>Menu</h4>
           <p><a href="Index.php">Início</a></p>
-          <p><a href="cadastro-imovel.php">Cadastrar Novo Valor</a></p>
+          
         </div><!-- end #menu -->
         <div id="conteudo" class="col-xs-12 col-sm-10 col-md-10 col-lg-10 ">
 
@@ -47,7 +48,7 @@
           <!-- Consulta pelo Campo  -->
 
           <?php
-         
+              
             $input_consulta = $_GET['input_consulta'];
             $input_consulta = date("d/m/Y" , strtotime($input_consulta)) ;
 
@@ -98,11 +99,17 @@
             <div class="form-group col-xs-12 col-sm-4 col-md-12 col-lg-3 esquerda">
                <a href="Importacao2.php"> <button type="button" class="btn btn-success">Importar</button> </a>
             </div>
+            <form role="form" method="POST" action="Exportarexcel.php">
+              <div class="form-group col-xs-12 col-sm-4 col-md-12 col-lg-3 esquerda">
+                <button type="submit" class="btn btn-success" name="export_excel">Exportar p/ .Xls</button> 
+              </div>
+            </form>
           </div>
        
         <!-- Consulta de toda Base Interna -->
           <?php
-            $consulta = "SELECT id, dt_cambio, vl_cambio FROM cambio" ;
+            $consulta = "SELECT id, dt_cambio, vl_cambio FROM cambio
+            ORDER by id" ;
             $teste = $conn->query($consulta) or die($conn->error);
             
             //echo Date("d/m/y", strtotime("dt_cambio"));

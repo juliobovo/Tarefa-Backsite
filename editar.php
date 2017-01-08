@@ -47,7 +47,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centro">
 
 
-              <form role="form" method="POST" action="altera_imovel.php?id=<?php echo $id;?>" >
+              <form role="form" method="POST" action="altera_cambio.php?id=<?php echo $id;?>" >
 
                 <div class="form-group col-xs-12 col-sm-4 col-md-12 col-lg-2 esquerda">
                   <label for="data">Data</label>
@@ -67,7 +67,7 @@
                   <input type="text" class="form-control" id="dormitorios" name="txt_valorCambio" value="<?php echo $dados['vl_cambio']; ?>" required  />
                 </div>
                 <div class="form-group col-xs-12 col-sm-4 col-md-2 col-lg-2 esquerda" >
-                  <button type="submit" class="btn btn-primary" id="btn_alterarimovel">Alterar</button>
+                  <button type="submit" class="btn btn-primary" id="btn_alterarimovel">Salvar Alteração</button>
                 </div>
               
 
